@@ -1,0 +1,94 @@
+Version: 1.0
+
+# The actual chest that you place down will be spawned in like the settings you have below
+# No you cannot change that its a chest however there are many customizable options to roam
+# These events will take effect when it is placed down
+Physical Chest:
+# Play a sound when you place down the chest, again make sure your using your versions sound names
+# This uses a 1.8 sound name however it will translate only this sound name to other versions correctly
+   Sound: "CHEST_OPEN"
+# The name that will be displayed above the chest as a hologram
+   Hologram: "&9Vacuum Chest"
+   
+# What will be displayed in your inventory hovering over the item
+Vacuum Chest:
+   Name: "&cVacuum Chest"
+   Lore: 
+      - ''
+      - '&7This item can be placed in one chunk and collect'
+      - '&7all the items that are dropped and will automatically sell it'
+      - '&7Only one can be placed in a single chunk!'
+      - ''
+      - '&9Vacuum Chest'
+      
+Vacuum Inventory Layout:
+   # NEVER MOVE THIS ITEM TO A DIFFERENT SLOT !
+   # You can still edit the materials and
+   0:
+      # Item that will be displayed in the inventory for the first slot
+      Material: "STAINED_GLASS_PANE"
+      # Change the type of wool or glass colors etc...
+      Material Data: 3
+      # Set the name of the item to display
+      Name: "&bPickup Vacuum Chest Seller"
+      # Set the lore of the item to display
+      Lore:
+         - ''
+         - '&7Money will stop generating from items'
+         - '&7within this chunk, your accumulated money will be saved'
+      # Atleast one item must have Pickup Chest Slot: true, you can add this to any slot
+      Pickup Chest Slot: true
+   1:
+   # If you want to have a slot empty just set the material to {none}
+      Material: "{none}"
+      Material Data: 0
+      Name: ""
+      Lore: ""
+   2:
+      Material: "{none}"
+      Material Data: 0
+      Name: ""
+      Lore: ""
+   3:
+      Material: "{none}"
+      Material Data: 0
+      Name: ""
+      Lore: ""
+   4:
+      Material: "PAPER"
+      Material Data: 0
+      Name: "&aAccumulated Money"
+      Lore:
+         - ''
+         - '&a${Accumulated Money}'
+      # If your using sold items info, the Lore: "" , will be discarded and set by the items sold
+      # Only one slot may have this attribute
+      # Yes you must have this option to true in one of the slots
+      Sold Items Info: true
+   5:
+      Material: "{none}"
+      Material Data: 0
+      Name: ""
+      Lore: ""
+   6:
+      Material: "{none}"
+      Material Data: 0
+      Name: ""
+      Lore: ""
+   7:
+      Material: "{none}"
+      Material Data: 0
+      Name: ""
+      Lore: ""
+   8:
+      # NEVER MOVE THIS ITEM TO A DIFFERENT SLOT !
+      Material: "BARRIER"
+      Material Data: 0
+      Name: "&cClose Inventory"
+      Lore: ""
+      # Make sure players have an option to close the inventory instead of using their inventory keypress
+      Close Chest Slot: true
+   
+   
+   
+   

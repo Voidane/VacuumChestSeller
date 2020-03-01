@@ -1,0 +1,19 @@
+# NOTE: Some versions use diffirent names, however do not include "Legacy" into anything
+# The plugin removes Legacy and will not find any item with that name no matter the version
+# If your not sure what an item name is and need to see, break or spawn it in the vsc chunk and it
+# will print the name you need to use for it!
+Debug Item Name To System: false
+
+LOG(0): 2.0
+
+WOOL(10): 20
+   
+SAPLING(0):  2.0
+
+SUGAR_CANE_BLOCK(0): 10.0
+
+IRON_INGOT(0): 100.00
+
+DIRT(0): 0.1
+
+CACTUS(0): 10.0

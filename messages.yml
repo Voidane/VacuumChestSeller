@@ -1,0 +1,13 @@
+# Messages
+#
+#
+#
+#
+isArgValidByHelp_True: "{PREFIX} &6A list of commands from Vacuum Chest Seller \n&7/vcs help &aShows a full list of all commands \n&7/vcs give &aWill give a player that is selected a vacuum chest seller \n&7/vcs giveall &aGive all players online an amount of vacuum chest sellers \n&7/vcs reload &aReload config.yml"
+isArgValidByHelp_False: "{PREFIX} &6No arguements found \n&7Use /vcs help for a list of commands"
+isArgValidForGive_True: "{PREFIX} &6Unable to allocate player  \n&7Correct Usage: &a/vcs give <player> <amount>"
+isArgValidForGive_All_True: "{PREFIX} &6No amount found \n&7Correct Usage: &a/vcs giveall <amount>"
+isArgForPlayerAmount_True: "{PREFIX} &6No amount found \n&7Correct Usage: &a/vcs give {PLAYER} <amount>"
+isArgValidForAmount_Give: "{PREFIX} &6Unsopported amount \n&7{AMOUNT} is to large or small, must be <1-64>"
+isArgValidForAmount_Give_All: "{PREFIX} &6Unsopported amount \n&7{AMOUNT} is to large or small, must be <1-64>"
+No_Command_Found: "{PREFIX} &cNo command such as &a/vcs &4&l{COMMAND}"

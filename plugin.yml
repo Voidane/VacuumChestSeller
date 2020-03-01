@@ -1,0 +1,17 @@
+name: VacuumChestSeller
+main: org.voidane.vcs.VacuumChestSeller
+version: 1.0
+description: VCS allows for any item spawned in the chunk to be sold to the player automatically!
+commands:
+     vcs:
+         description: Show results of what vsc does
+         usage: /<command>
+depend: [Essentials, Vault]
+         
+         
+         # Permissions
+         #vcs.command.vcs command usage for vcs
+         #vcs.command.vcs.help
+         #vcs.command.vcs.give
+         #vcs.command.vcs.giveall
+         #
