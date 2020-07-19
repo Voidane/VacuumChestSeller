@@ -29,6 +29,10 @@ public class BlockBrokenInVCSRegion implements Listener
 	private VacuumChestSeller plugin = VacuumChestSeller.getPlugin(VacuumChestSeller.class);
 	private Essentials essentials = Essentials.getPlugin(Essentials.class);
 	
+	FileConfiguration preConfiguration = new FileConfig().getSellPrice();
+	FileConfiguration UserDataChestConfig = new FileConfig().getUserDataChest();
+	FileConfiguration SellPricesConfig = new FileConfig().getSellPrice();
+	
 	public BlockBrokenInVCSRegion() 
 	{
 		Bukkit.getPluginManager().registerEvents(this, plugin);
@@ -42,21 +46,17 @@ public class BlockBrokenInVCSRegion implements Listener
 	{
 		String itemString = event.getEntity().getItemStack().getData().toString();
 		
-		FileConfiguration preConfiguration = new FileConfig().getSellPrice();
-		
 		if (preConfiguration.getBoolean("Debug Item Name To System"))
 		{
 			System.out.println(itemString.replace("LEGACY_", ""));	
 		}
 		
-		
 		String locString = event.getEntity().getLocation().getWorld().getName().toString()+event.getEntity().getLocation().getChunk();
-		FileConfiguration configuration = new FileConfig().getUserDataChest();
-		if (configuration.contains(locString))
+		
+		if (UserDataChestConfig.contains(locString))
 		{
-			
-					configuration = new FileConfig().getSellPrice();
-					double economy = configuration.getDouble(event.getEntity().getItemStack().getData().toString().replace("LEGACY_", ""));
+		
+					double economy = SellPricesConfig.getDouble(event.getEntity().getItemStack().getData().toString().replace("LEGACY_", ""));
 					
 					
 					if (economy <= 0)
@@ -67,11 +67,10 @@ public class BlockBrokenInVCSRegion implements Listener
 					
 					economy = economy * event.getEntity().getItemStack().getAmount();
 					
-					configuration = new FileConfig().getUserDataChest();
 					Player recievingPlayer = Bukkit.getPlayer(UUID.fromString(checkChestOwner(locString, event.getEntity().getWorld(), 
-								configuration.getInt(locString+".x"), 
-								configuration.getInt(locString+".y"), 
-								configuration.getInt(locString+".z"))));
+								UserDataChestConfig.getInt(locString+".x"), 
+								UserDataChestConfig.getInt(locString+".y"), 
+								UserDataChestConfig.getInt(locString+".z"))));
 						
 					
 					
@@ -84,10 +83,10 @@ public class BlockBrokenInVCSRegion implements Listener
 								e.printStackTrace();
 							}
 						
-					setAccMoneyData(locString, configuration, event.getEntity().getWorld(), 
-									configuration.getInt(locString+".x"), 
-									configuration.getInt(locString+".y"), 
-									configuration.getInt(locString+".z"), economy, locString);
+					setAccMoneyData(locString, UserDataChestConfig, event.getEntity().getWorld(), 
+									UserDataChestConfig.getInt(locString+".x"), 
+									UserDataChestConfig.getInt(locString+".y"), 
+									UserDataChestConfig.getInt(locString+".z"), economy, locString);
 							
 					event.setCancelled(true);
 
